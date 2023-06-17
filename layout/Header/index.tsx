@@ -24,6 +24,11 @@ export const Header: FC = () => {
         <Link href="/about" className={navLink}>
           ¿Qué es CityWorks?
         </Link>
+        {user ? (
+          <Link href="/actividades" className={navLink}>
+            Actividades
+          </Link>
+        ) : null}
         <Link href={user ? '/' : '/auth'} tabIndex={-1}>
           <Button variant="gray" onClick={handleClick}>
             {user ? 'Cerrar sesion' : 'Iniciar sesion'}
