@@ -1,0 +1,34 @@
+@import '../mixins';
+
+div.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  figcaption {
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+div.withShadow {
+  img {
+    @include shadow;
+  }
+}
+
+div.withPadding {
+  padding: 4px;
+}

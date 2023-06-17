@@ -1,0 +1,54 @@
+@import '../animations';
+
+div.carouselContainer {
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+div.carousel {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+div.carouselImg {
+  width: 100%;
+}
+
+button.carouselButton {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 100%;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  &:hover {
+    transition: all 0.3s ease-out;
+    background: rgba(#000, 0.7);
+
+    svg {
+      color: var(--primary);
+    }
+  }
+
+  svg {
+    font-size: 1.5rem;
+  }
+}
+
+.carouselSlide {
+  @include fadeOut($time: 0.3s);
+}
+
+.carouselSlideFinished {
+  @include fadeIn($time: 0.3s);
+}

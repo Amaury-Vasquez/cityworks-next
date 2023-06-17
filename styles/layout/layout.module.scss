@@ -1,0 +1,19 @@
+.mainLayout {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  gap: 40px;
+}
+
+div.fallback {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background: rgba($color: #000000, $alpha: 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

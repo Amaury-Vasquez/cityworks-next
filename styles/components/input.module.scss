@@ -1,0 +1,29 @@
+div.labelInput {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  label,
+  input {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  label {
+    padding: 0 8px;
+  }
+}
+
+input.textInput {
+  height: fit-content;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--primary);
+  padding: 4px 8px 12px;
+  outline: none;
+  display: flex;
+  align-items: center;
+}

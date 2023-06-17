@@ -1,0 +1,42 @@
+@import '../mixins';
+
+main.homeContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  @include page;
+}
+
+article.homeArticle {
+  width: 100%;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1.homeTitle {
+  color: var(--primary);
+  font-size: 5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+p.homeText {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 2rem;
+}
+
+a.homeButton {
+  margin-top: 12px;
+}
+
+.homeImage {
+  margin-top: 100px;
+  padding: 24px;
+}

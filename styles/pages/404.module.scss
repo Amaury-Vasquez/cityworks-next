@@ -1,0 +1,32 @@
+@import '../mixins';
+
+main.notFoundLayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 50px;
+  @include page;
+
+  @media screen and (min-width: 1000px) {
+    padding: 50px 120px;
+  }
+}
+
+h1.notFoundText {
+  font-size: 10rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin: 0;
+}
+
+p.details {
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+  color: var(--white);
+  text-align: justify;
+}

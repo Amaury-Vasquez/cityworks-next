@@ -1,0 +1,11 @@
+@import '../mixins';
+
+main.authContent {
+  width: 100%;
+  min-height: calc(100vh - 300px);
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include page;
+}

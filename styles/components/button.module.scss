@@ -1,0 +1,52 @@
+@import '../mixins';
+
+button.button,
+a.button {
+  width: fit-content;
+  height: fit-content;
+  padding: 12px 18px;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.2s ease-in;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+button.primary,
+a.primary {
+  background: var(--dark);
+  color: var(--primary);
+}
+
+button.gray,
+a.gray {
+  background: var(--gray);
+  color: var(--primary);
+}
+button.primary,
+a.primary,
+button.gray,
+a.gray {
+  &:focus-visible {
+    border: 1px solid var(--primary);
+  }
+}
+
+button.largeButton {
+  font-size: 1.5rem;
+  padding: 16px 24px;
+  border-radius: 24px;
+}
+
+button.shadow,
+a.shadow {
+  @include shadow();
+}
