@@ -1,7 +1,6 @@
-import { User } from "@/interfaces";
-import { useCookies } from "react-cookie";
-
-const USER_COOKIE_KEY = "user";
+import { User } from '@/interfaces';
+import { useCookies } from 'react-cookie';
+import { USER_COOKIE_KEY } from '@/constants';
 
 export const useUserAuthenticated = () => {
   const [cookies, setCookie] = useCookies([USER_COOKIE_KEY]);
@@ -10,5 +9,6 @@ export const useUserAuthenticated = () => {
     setCookie(USER_COOKIE_KEY, data);
   };
 
-  return { user: cookies.user, registerUserCookie };
+  const user: User | undefined = cookies.user;
+  return { user, registerUserCookie };
 };

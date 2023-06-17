@@ -6,10 +6,12 @@ import {
   LoginGoodResponse,
 } from '@/interfaces';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export async function authenticateUser(
   userData: UserLogin
 ): Promise<LoginFailResponse | LoginGoodResponse> {
-  const response = await fetch('http://0.0.0.0:5000/api/v1/login', {
+  const response = await fetch(API_URL + '/login/', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(userData),
@@ -20,7 +22,7 @@ export async function authenticateUser(
 }
 
 export async function registerUser(userData: UserRegister): Promise<User> {
-  const response = await fetch('http://0.0.0.0:5000/api/v1/register', {
+  const response = await fetch(API_URL + '/register/', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(userData),
