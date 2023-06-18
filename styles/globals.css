@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 html {
@@ -13,7 +17,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Monstserrat, Helvetica Neue, sans-serif;
+  font-family: Montserrat, Helvetica Neue, sans-serif;
   font-size: 16px;
   overflow-x: hidden;
   min-height: 100vh;
