@@ -1,7 +1,11 @@
 import { FC } from 'react';
 import Image from 'next/image';
 
-export const Avatar: FC = () => (
+interface AvatarProps {
+  name: string;
+}
+
+export const Avatar: FC<AvatarProps> = ({ name }) => (
   <div className="flex flex-col w-full space-y-2 items-center">
     <div className="avatar">
       <div className="w-28 rounded-full">
@@ -14,7 +18,7 @@ export const Avatar: FC = () => (
       </div>
     </div>
     <span className="text-primary text-center text-lg font-semibold">
-      Amaury Vasquez
+      {name}
     </span>
   </div>
 );

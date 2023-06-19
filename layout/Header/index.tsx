@@ -1,5 +1,5 @@
-import { Link } from '@/components';
-import { FC, use } from 'react';
+import { Button, Link } from '@/components';
+import { FC } from 'react';
 import styles from '@/styles/layout/header.module.scss';
 import { useUserAuthenticated, useLogout } from '@/hooks';
 
@@ -11,6 +11,7 @@ export const Header: FC = () => {
 
   function handleClick() {
     if (user) {
+      console.log(user);
       logout();
     }
   }
@@ -30,9 +31,15 @@ export const Header: FC = () => {
           </Link>
         ) : null}
 
-        <Link href={user ? '/' : '/auth'} variant="gray" onClick={handleClick}>
-          {user ? 'Cerrar sesion' : 'Iniciar sesion'}
-        </Link>
+        {user ? (
+          <Button onClick={handleClick} variant="gray">
+            Cerrar sesion
+          </Button>
+        ) : (
+          <Link href="/auth" variant="gray">
+            Iniciar sesion
+          </Link>
+        )}
       </nav>
     </header>
   );

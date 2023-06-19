@@ -42,9 +42,10 @@ const LINKS: NavigationLinkProps[] = [
 export const UserPanel: FC = () => {
   const { user } = useUserAuthenticated();
   if (!user) return null;
+
   return (
     <div className="w-full h-full border-r border-solid border-primary flex flex-col items-center space-y-4 p-10">
-      <Avatar />
+      <Avatar name={`${user.nombre} ${user.apellido}`} />
       {LINKS.map((link, idx) => (
         <NavigationLink key={link.path + idx} {...link} />
       ))}

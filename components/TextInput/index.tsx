@@ -1,20 +1,27 @@
-import { HTMLProps, forwardRef } from "react";
-import styles from "@/styles/components/input.module.scss";
+import { HTMLProps, forwardRef } from 'react';
+import clsx, { ClassValue } from 'clsx';
+import styles from '@/styles/components/input.module.scss';
 
 const { labelInput, textInput } = styles;
 
 interface TextInputProps extends HTMLProps<HTMLInputElement> {
   id: string;
   label: string;
+  className?: string;
+  unstyled?: boolean;
 }
 
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  (props, ref) => (
+  ({ id, label, className, unstyled = false, ...props }, ref) => (
     <div className={labelInput}>
-      <label htmlFor={props.id}>{props.label}</label>
-      <input className={textInput} {...props} ref={ref} />
+      <label htmlFor={id}>{label}</label>
+      <input
+        className={clsx(!unstyled && textInput, className)}
+        {...props}
+        ref={ref}
+      />
     </div>
   )
 );
 
-TextInput.displayName = "TextInput";
+TextInput.displayName = 'TextInput';

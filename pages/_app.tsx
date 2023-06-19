@@ -1,7 +1,8 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
-import { MainLayout } from '@/layout';
 import { Montserrat } from 'next/font/google';
+
+import { MainLayout } from '@/layout';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 

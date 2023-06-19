@@ -1,6 +1,8 @@
 import { FC, ReactNode } from 'react';
-import { Header } from './Header';
 import styles from '@/styles/layout/layout.module.scss';
+import { Header } from './Header';
+
+const protectedRoutes = ['/actividades', '/conceptos'];
 
 export const MainLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
