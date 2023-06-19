@@ -1,8 +1,7 @@
 import clsx from 'clsx';
-import Link from 'next/link';
 import { FC } from 'react';
 import { IconType } from 'react-icons/lib';
-import { Button, Card } from '@/components';
+import { Button, Card, Link } from '@/components';
 import styles from '@/styles/components/actividades.module.scss';
 
 const {
@@ -44,8 +43,8 @@ export const ActionCard: FC<ActionCardProps> = ({
   >
     <span className={cardTitle}>{title}</span>
     {Icon ? <Icon className={icon} /> : null}
-    <Link className={buttonLink} href={path} tabIndex={-1}>
-      <Button>{actionName}</Button>
-    </Link>
+    <div className={buttonLink}>
+      <Link href={path}>{actionName}</Link>
+    </div>
   </Card>
 );

@@ -1,17 +1,17 @@
 import clsx from 'clsx';
-import { FC, HTMLProps, ReactNode } from 'react';
-
+import { FC, ReactNode } from 'react';
+import NextLink from 'next/link';
 import styles from '@/styles/components/button.module.scss';
 
-interface ButtonProps extends HTMLProps<HTMLButtonElement> {
+interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'gray';
   large?: boolean;
   withShadow?: boolean;
   children: ReactNode;
-  type?: ButtonTypes;
   className?: string;
+  href: string;
+  onClick?: () => void;
 }
-export type ButtonTypes = 'button' | 'submit' | 'reset';
 
 const { button, primary, secondary, tertiary, largeButton, shadow, gray } =
   styles;
@@ -23,7 +23,7 @@ const variants = {
   ['gray']: gray,
 };
 
-export const Button: FC<ButtonProps> = ({
+export const Link: FC<ButtonProps> = ({
   children,
   variant = 'primary',
   large = false,
@@ -32,7 +32,7 @@ export const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <button
+    <NextLink
       className={clsx(
         button,
         variants[variant],
@@ -43,6 +43,6 @@ export const Button: FC<ButtonProps> = ({
       {...props}
     >
       {children}
-    </button>
+    </NextLink>
   );
 };

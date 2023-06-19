@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/components';
 import { FC, use } from 'react';
 import { Button } from '@/components';
 import styles from '@/styles/layout/header.module.scss';
@@ -29,10 +29,9 @@ export const Header: FC = () => {
             Actividades
           </Link>
         ) : null}
-        <Link href={user ? '/' : '/auth'} tabIndex={-1}>
-          <Button variant="gray" onClick={handleClick}>
-            {user ? 'Cerrar sesion' : 'Iniciar sesion'}
-          </Button>
+
+        <Link href={user ? '/' : '/auth'} variant="gray" onClick={handleClick}>
+          {user ? 'Cerrar sesion' : 'Iniciar sesion'}
         </Link>
       </nav>
     </header>

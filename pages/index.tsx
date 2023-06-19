@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { Button, Image } from '@/components';
+import { Button, Image, Link } from '@/components';
 import styles from '@/styles/pages/home.module.scss';
 
 const { homeContent, homeTitle, homeText, homeArticle, homeButton, homeImage } =
@@ -23,10 +22,14 @@ export default function Home() {
             CityWorks es un servicio que se encarga de la administración y
             gestión de obras públicas en la república Mexicana.
           </p>
-          <Link className={homeButton} href="/auth" tabIndex={-1}>
-            <Button large withShadow variant="gray">
-              Iniciar sesión
-            </Button>
+          <Link
+            className={homeButton}
+            href="/auth"
+            large
+            withShadow
+            variant="gray"
+          >
+            Iniciar sesión
           </Link>
         </article>
         <div className={homeImage}>

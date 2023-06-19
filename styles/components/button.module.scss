@@ -1,7 +1,6 @@
 @import '../mixins';
 
-button.button,
-a.button {
+.button {
   width: fit-content;
   height: fit-content;
   padding: 12px 18px;
@@ -20,33 +19,29 @@ a.button {
   }
 }
 
-button.primary,
-a.primary {
+.primary {
   background: var(--dark);
   color: var(--primary);
 }
 
-button.gray,
-a.gray {
+.gray {
   background: var(--gray);
   color: var(--primary);
 }
-button.primary,
-a.primary,
-button.gray,
-a.gray {
+
+.primary,
+.gray {
   &:focus-visible {
     border: 1px solid var(--primary);
   }
 }
 
-button.largeButton {
+.largeButton {
   font-size: 1.5rem;
   padding: 16px 24px;
   border-radius: 24px;
 }
 
-button.shadow,
-a.shadow {
+.shadow {
   @include shadow();
 }

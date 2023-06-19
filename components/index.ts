@@ -7,3 +7,6 @@ export * from './Loaders';
 export { RegisterForm } from './RegisterForm';
 export { Title } from './Title';
 export { Card } from './Card';
+export { Link } from './Link';
+export { Entrega } from './Entrega';
+export { ActionCard, type ActionCardProps } from './ActionCard';
