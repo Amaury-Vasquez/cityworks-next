@@ -22,15 +22,15 @@ export interface ActionCardProps {
   Icon?: IconType;
   path: string;
   actionName: string;
-  collapsed: boolean;
-  col: 1 | 2 | 3;
+  collapsed?: boolean;
+  col?: 1 | 2 | 3;
 }
 
 export const ActionCard: FC<ActionCardProps> = ({
   title,
   Icon,
   path,
-  collapsed,
+  collapsed = false,
   col,
   actionName,
 }) => (
@@ -38,7 +38,7 @@ export const ActionCard: FC<ActionCardProps> = ({
     className={clsx(
       actividadesCard,
       collapsed && collapsedCard,
-      COLUMNS[col - 1]
+      col && COLUMNS[col - 1]
     )}
   >
     <span className={cardTitle}>{title}</span>

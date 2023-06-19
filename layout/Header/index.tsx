@@ -1,6 +1,5 @@
 import { Link } from '@/components';
 import { FC, use } from 'react';
-import { Button } from '@/components';
 import styles from '@/styles/layout/header.module.scss';
 import { useUserAuthenticated, useLogout } from '@/hooks';
 
@@ -9,6 +8,7 @@ const { header, homeLink, nav, navLink } = styles;
 export const Header: FC = () => {
   const { user } = useUserAuthenticated();
   const logout = useLogout();
+
   function handleClick() {
     if (user) {
       logout();

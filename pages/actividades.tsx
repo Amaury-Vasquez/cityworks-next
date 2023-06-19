@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { FC } from 'react';
-import { SuperIntendente } from '@/modules/Actividades';
+import { SuperIntendente } from '@/modules/';
 import styles from '@/styles/pages/template.module.scss';
 
 const Actividades: FC = () => {
@@ -10,7 +10,7 @@ const Actividades: FC = () => {
         <title>Cityworks - Actividades</title>
         <meta
           name="description"
-          content="CityWorks, pagina de activdades de usuario"
+          content="CityWorks, pagina de actividades de usuario"
         />
       </Head>
       <main className={styles.page}>

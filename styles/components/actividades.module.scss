@@ -5,6 +5,7 @@ div.actividadesCard {
   align-items: center;
   height: fit-content;
   gap: 30px;
+  height: 100%;
 }
 
 div.collapsedCard {
@@ -41,7 +42,7 @@ span.cardTitle {
 
 span.entrega {
   text-align: center;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 600;
   color: var(--primary);
 }
