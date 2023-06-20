@@ -2,7 +2,7 @@ import { useQuery } from 'react-query';
 import { CONCEPT_LIST_KEY, CONCEPT_URL } from '@/constants';
 import { Concepto, CreaConcepto } from '@/interfaces';
 
-async function createConcept(concepto: CreaConcepto) {
+export async function createConcept(concepto: CreaConcepto) {
   const response = await fetch(CONCEPT_URL, {
     method: 'POST',
     headers: {

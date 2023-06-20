@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { FC, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import {
@@ -8,39 +9,39 @@ import {
   TextInput,
   Title,
 } from '@/components';
-import { CreaConcepto } from '@/interfaces';
+import { CreaEstimacion } from '@/interfaces';
 import { createConcept } from '@/queries';
 import styles from '@/styles/components/input.module.scss';
 
 const CRUMB: BreadcrumbItem[] = [
   {
-    href: '/conceptos',
-    text: 'Conceptos',
+    href: '/estimaciones',
+    text: 'Estimaciones',
   },
   {
-    href: '/conceptos/agregar',
+    href: '/estimaciones/agregar',
     text: 'Agregar',
   },
 ];
 
-export const AgregarConcepto: FC = () => {
-  const { register, handleSubmit, reset } = useForm<CreaConcepto>();
+export const AgregarEstimacion: FC = () => {
+  const { register, handleSubmit, reset } = useForm<CreaEstimacion>();
   const dialogRef = useRef<HTMLDialogElement>(null);
 
-  const onSubmit = async (data: CreaConcepto) => {
-    try {
-      await createConcept(data).then(() => {
-        reset();
-        if (dialogRef.current) {
-          dialogRef.current?.showModal();
-          setTimeout(() => {
-            dialogRef.current?.close();
-          }, 2000);
-        }
-      });
-    } catch (error) {
-      console.error(error);
-    }
+  const onSubmit = async (data: CreaEstimacion) => {
+    // try {
+    //   await createConcept(data).then(() => {
+    //     reset();
+    //     if (dialogRef.current) {
+    //       dialogRef.current?.showModal();
+    //       setTimeout(() => {
+    //         dialogRef.current?.close();
+    //       }, 2000);
+    //     }
+    //   });
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
 
   const textInputStyle = '!bg-gray !mt-2 rounded-sm !border-none';
@@ -49,10 +50,11 @@ export const AgregarConcepto: FC = () => {
       <Breadcrumb crumbs={CRUMB} />
       <Title className="text-center !font-bold">Agregar Concepto</Title>
       <form className="w-full space-y-4" onSubmit={handleSubmit(onSubmit)}>
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid grid-cols-4 gap-10">
           <TextInput
             className={textInputStyle}
-            label="Nombre de concepto"
+            containerClassName="col-start-1 col-end-4"
+            label="Nombre de estimacion"
             id="nombre"
             {...register('nombre', { required: true })}
           />
@@ -63,20 +65,40 @@ export const AgregarConcepto: FC = () => {
             {...register('unidad', { required: true })}
           />
         </div>
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid grid-cols-5 gap-10">
+          <TextInput
+            className={textInputStyle}
+            label="Programado"
+            id="programado"
+            {...register('programado', { required: true })}
+          />
+          <TextInput
+            className={textInputStyle}
+            label="Acumulado"
+            id="acumulado"
+            pattern="[0-9]*"
+            {...register('acumulado', { required: true })}
+          />
+          <TextInput
+            className={textInputStyle}
+            label="Total"
+            id="total"
+            pattern="[0-9]*"
+            {...register('total', { required: true })}
+          />
+          <TextInput
+            className={textInputStyle}
+            label="Por ejecutar"
+            id="faltante"
+            pattern="[0-9]*"
+            {...register('faltante', { required: true })}
+          />
           <TextInput
             className={textInputStyle}
             label="Precio unitario"
             id="precio"
-            pattern="[0-9]+(\.[0-9][0-9]+)"
-            {...register('precio', { required: true })}
-          />
-          <TextInput
-            className={textInputStyle}
-            label="Cantidad"
-            id="cantidad"
             pattern="[0-9]*"
-            {...register('cantidad', { required: true })}
+            {...register('precio', { required: true })}
           />
         </div>
         <div className={styles.labelInput}>
@@ -91,11 +113,11 @@ export const AgregarConcepto: FC = () => {
         </div>
         <div className="flex w-full justify-center py-4">
           <Button variant="gray" type="submit">
-            Agregar concepto
+            Agregar estimacion
           </Button>
         </div>
       </form>
-      <Dialog ref={dialogRef} text="Concepto agregado correctamente!" />
+      <Dialog ref={dialogRef} text="Estimacion agregada correctamente!" />
     </div>
   );
 };

@@ -11,3 +11,4 @@ export { Link } from './Link';
 export { Entrega } from './Entrega';
 export { ActionCard, type ActionCardProps } from './ActionCard';
 export { Breadcrumb, type BreadcrumbItem } from './Breadcrumb';
+export { Dialog } from './Dialog';

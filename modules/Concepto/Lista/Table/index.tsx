@@ -56,7 +56,7 @@ export const Table: FC<TableProps> = ({ data }) => (
                 odd && 'bg-theme-gray'
               )}
             >
-              {concepto.descripcion}
+              {concepto.descripcion || '-'}
             </td>
             <td
               className={clsx(
