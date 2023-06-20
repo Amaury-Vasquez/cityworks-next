@@ -1,11 +1,11 @@
 export interface Concepto {
-  nombre: string;
   clave: string;
+  nombre: string;
+  descripcion: string;
   unidad: string;
-  importe: number;
   precio: number;
   cantidad: number;
-  descripcion: string;
+  importe: number;
 }
 
 export interface CreaConcepto {

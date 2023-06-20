@@ -15,7 +15,17 @@ module.exports = {
         secondary: '#b8b578',
         darker: '#080400',
         gray: '#414141',
+        'theme-gray': '#18181c',
       },
+    },
+    keyframes: {
+      fadeIn: {
+        '0%': { opacity: '0', filter: 'blur(5px)' },
+        '100%': { opacity: '1', filter: 'blur(0px)' },
+      },
+    },
+    animation: {
+      fadeIn: 'fadeIn 0.3s ease-in-out',
     },
   },
   plugins: [require('daisyui')],

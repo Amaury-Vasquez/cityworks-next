@@ -1,8 +1,25 @@
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
-import { Button, TextInput, Title } from '@/components';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
+  TextInput,
+  Title,
+} from '@/components';
 import { CreaConcepto } from '@/interfaces';
 import styles from '@/styles/components/input.module.scss';
+
+const CRUMB: BreadcrumbItem[] = [
+  {
+    href: '/conceptos',
+    text: 'Conceptos',
+  },
+  {
+    href: '/conceptos/agregar',
+    text: 'Agregar',
+  },
+];
 
 export const AgregarConcepto: FC = () => {
   const { register, handleSubmit } = useForm<CreaConcepto>();
@@ -14,6 +31,7 @@ export const AgregarConcepto: FC = () => {
   const textInputStyle = '!bg-gray !mt-2 rounded-sm !border-none';
   return (
     <div className="w-full space-y-8 h-fit p-4">
+      <Breadcrumb crumbs={CRUMB} />
       <Title className="text-center !font-bold">Agregar Concepto</Title>
       <form className="w-full space-y-4" onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-2 gap-10">
