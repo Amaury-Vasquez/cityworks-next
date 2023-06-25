@@ -1,5 +1,9 @@
 import Head from 'next/head';
+import { dehydrate, QueryClient } from 'react-query';
 import styles from '@/styles/pages/template.module.scss';
+import { CATALOG_LIST_KEY } from '@/constants';
+import { ListaCatalogos } from '@/modules';
+import { getCatalogList } from '@/queries/useCatalogList';
 
 export default function Catalogo() {
   return (
@@ -11,7 +15,20 @@ export default function Catalogo() {
           content="CityWorks, pagina de lista de catalogos de conceptos"
         />
       </Head>
-      <main className={styles.page}></main>
+      <main className={styles.page}>
+        <ListaCatalogos />
+      </main>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery([CATALOG_LIST_KEY], getCatalogList);
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
 }

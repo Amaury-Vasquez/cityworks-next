@@ -4,6 +4,7 @@ export interface User {
   id_usuario: string;
   apellido: string;
   rol: string;
+  image_url: string | null;
 }
 
 export interface UserLogin {

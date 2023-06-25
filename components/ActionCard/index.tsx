@@ -16,6 +16,7 @@ const {
 } = styles;
 
 const COLUMNS = [col1, col2, col3];
+const ROWS = ['row-start-1', 'row-start-2'];
 
 export interface ActionCardProps {
   title: string;
@@ -24,6 +25,7 @@ export interface ActionCardProps {
   actionName: string;
   collapsed?: boolean;
   col?: 1 | 2 | 3;
+  row?: 1 | 2;
 }
 
 export const ActionCard: FC<ActionCardProps> = ({
@@ -32,13 +34,15 @@ export const ActionCard: FC<ActionCardProps> = ({
   path,
   collapsed = false,
   col,
+  row,
   actionName,
 }) => (
   <Card
     className={clsx(
       actividadesCard,
       collapsed && collapsedCard,
-      col && COLUMNS[col - 1]
+      col && COLUMNS[col - 1],
+      row && ROWS[row - 1]
     )}
   >
     <span className={cardTitle}>{title}</span>

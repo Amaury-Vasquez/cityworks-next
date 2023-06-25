@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { FC } from 'react';
 import {
+  MdOutlineCreate,
   MdOutlineLibraryAdd,
   MdOutlinePreview,
   MdOutlineFormatListBulleted,
@@ -25,12 +26,12 @@ const ENLACES: ActionCardProps[] = [
     col: 1,
   },
   {
-    title: 'Catalogos de conceptos',
+    title: 'Catalogo de conceptos',
     Icon: MdOutlinePreview,
     path: '/conceptos/catalogos',
     actionName: 'Ver catalogos',
-    collapsed: true,
     col: 2,
+    collapsed: true,
   },
 ];
 
