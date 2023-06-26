@@ -14,3 +14,4 @@ export { Breadcrumb, type BreadcrumbItem } from './Breadcrumb';
 export { Dialog } from './Dialog';
 export { ListItem } from './ListItem';
 export { Alert } from './Alert';
+export { IconButton } from './IconButton';

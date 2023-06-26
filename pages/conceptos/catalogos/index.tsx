@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { dehydrate, QueryClient } from 'react-query';
-import styles from '@/styles/pages/template.module.scss';
 import { CATALOG_LIST_KEY } from '@/constants';
 import { ListaCatalogos } from '@/modules';
 import { getCatalogList } from '@/queries/useCatalogList';
+import styles from '@/styles/pages/template.module.scss';
 
 export default function Catalogo() {
   return (

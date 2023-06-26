@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export interface BreadcrumbItem {
   text: string;
-  href: string;
+  href?: string;
 }
 
 export interface BreadcrumbProps {
@@ -18,7 +18,7 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ crumbs }) => (
           {index === crumbs.length - 1 ? (
             text
           ) : (
-            <Link href={href}> {text} </Link>
+            <Link href={href ?? '/'}> {text} </Link>
           )}
         </li>
       ))}
