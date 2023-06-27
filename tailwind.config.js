@@ -6,6 +6,23 @@ module.exports = {
     './modules/**/*.{js,ts,jsx,tsx,mdx}',
     './layout/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  daisyui: {
+    themes: [
+      {
+        cityworks: {
+          dark: '#212125',
+          white: '#e2ffff',
+          primary: '#f7f39a',
+          secondary: '#b8b578',
+          darker: '#080400',
+          gray: '#414141',
+          'theme-gray': '#18181c',
+          info: '#414141',
+          accent: '#848484',
+        },
+      },
+    ],
+  },
   theme: {
     extend: {
       colors: {
@@ -28,5 +45,8 @@ module.exports = {
       fadeIn: 'fadeIn 0.3s ease-in-out',
     },
   },
-  plugins: [require('daisyui')],
+  plugins: [
+    require('daisyui'),
+    require('tailwind-scrollbar')({ nocompatible: true }),
+  ],
 };

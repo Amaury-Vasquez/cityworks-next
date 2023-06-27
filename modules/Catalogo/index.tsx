@@ -5,7 +5,7 @@ import { Table } from '../Concepto/Lista/Table';
 import { PageLoader } from '@/layout';
 import { useCatalogConcepts } from '@/queries';
 import { NoConcepts } from './NoConcepts';
-import { MenuConcepto } from './MenuConcepto';
+import { MenuCatalogo } from './MenuCatalogo';
 
 const CRUMBS: BreadcrumbItem[] = [
   {
@@ -33,15 +33,15 @@ export const Catalogo: FC = () => {
     <div className="w-full flex flex-col space-y-4">
       <div className="w-full flex justify-between items-center">
         <Breadcrumb crumbs={crumbs} />
-        <MenuConcepto
+        <MenuCatalogo
           currentConcepts={data?.conceptos ?? []}
           refetch={refetch}
         />
       </div>
-      {isLoading || !data || isFetching ? (
+      {isLoading || isFetching ? (
         <PageLoader />
       ) : (
-        <div className="w-full flex flex-col space-y-10">
+        <div className="w-full flex flex-col space-y-10 animate-fadeIn">
           {data?.conceptos ? <Table data={data.conceptos} /> : <NoConcepts />}
         </div>
       )}

@@ -21,11 +21,7 @@ export const ListaConceptos: FC = () => {
   return (
     <div className="w-full flex flex-col space-y-8 px-4">
       <Breadcrumb crumbs={CRUMBS} />
-      {isLoading || !data || isFetching ? (
-        <PageLoader />
-      ) : (
-        <Table data={data ?? []} />
-      )}
+      {isLoading || isFetching ? <PageLoader /> : <Table data={data ?? []} />}
     </div>
   );
 };

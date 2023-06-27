@@ -9,7 +9,10 @@ interface DialogProps {
 export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
   ({ text, children, ...props }, ref) => (
     <dialog ref={ref} {...props} className="modal">
-      <form method="dialog" className="modal-box bg-dark text-center w-fit">
+      <form
+        method="dialog"
+        className="modal-box bg-dark text-center w-fit overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-secondary scrollbar-track-darker"
+      >
         {children ? (
           children
         ) : (
