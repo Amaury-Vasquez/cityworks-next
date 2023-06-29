@@ -1,24 +1,24 @@
 export interface Estimacion {
-  nombre: string;
-  clave: string;
-  unidad: string;
-  programado: string;
-  acumulado: number;
-  estimado: number;
-  total: number;
-  faltante: number;
-  precio: number;
-  importe: number;
-  descripcion: string;
+  id: string;
+  numero: number;
+  id_contrato: string;
+  periodo: string;
+  catalogo: string;
+  saldo_estimacion: number;
 }
 
-export interface CreaEstimacion {
-  nombre: string;
-  unidad: string;
-  programado: string;
-  acumulado: number;
-  total: number;
-  faltante: number;
-  precio: number;
-  descripcion: string;
+export interface GeneraEstimacion {
+  claveCatalogo: string;
+}
+
+export interface ReporteEstimacion {
+  numero: number;
+  periodo: string;
+  saldo_estimacion: number;
+  catalogo: string;
+  id_contrato: number;
+  id: string;
+  nombre_contrato: string;
+  fecha_contrato: string;
+  importe_contrato: number;
 }

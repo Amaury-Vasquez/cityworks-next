@@ -1,41 +1,44 @@
 import Head from 'next/head';
 import { FC } from 'react';
-import {
-  MdOutlineLibraryAdd,
-  MdOutlinePreview,
-  MdOutlineFormatListBulleted,
-} from 'react-icons/md';
+import { MdOutlinePreview, MdOutlineFormatListBulleted } from 'react-icons/md';
 import { ActionCard, ActionCardProps, Entrega } from '@/components';
 import { UserLayout } from '@/layout';
 import styles from '@/styles/pages/template.module.scss';
 
 const ENLACES: ActionCardProps[] = [
   {
-    title: 'Visualizar Estimaciones',
+    title: 'Captura de incidencias',
     Icon: MdOutlineFormatListBulleted,
-    path: '/estimaciones/visualizar',
-    actionName: 'Visitar',
+    path: '/incidencias/agregar',
+    actionName: 'Capturar',
     col: 1,
+  },
+  {
+    title: 'Todos las incidencias',
+    Icon: MdOutlinePreview,
+    path: '/incidencias/lista',
+    actionName: 'Visitar',
+    col: 2,
   },
 ];
 
-const Estimaciones: FC = () => {
+const Reportes: FC = () => {
   return (
     <>
       <Head>
-        <title>Cityworks - Estimaciones </title>
-        <meta name="description" content="CityWorks, pagina de estimaciones" />
+        <title>Cityworks - Incidencias </title>
+        <meta name="description" content="CityWorks, pagina de incidencias" />
       </Head>
       <main className={styles.page}>
-        <UserLayout title="Estimaciones">
+        <UserLayout title="Incidencias">
           {ENLACES.map((actividad, idx) => (
             <ActionCard key={actividad.title + idx} {...actividad} />
           ))}
-          <Entrega collapsed={false} last={false} />
+          <Entrega collapsed={false} />
         </UserLayout>
       </main>
     </>
   );
 };
 
-export default Estimaciones;
+export default Reportes;

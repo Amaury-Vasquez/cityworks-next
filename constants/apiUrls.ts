@@ -11,3 +11,7 @@ export const CATALOG_URL = `${BASE_URL}/catalogs/{id}`;
 export const CATALOG_CONCEPTS_URL = `${BASE_URL}/catalogs/{id}/items`;
 export const CATALOG_DELETE_CONCEPT_URL = `${BASE_URL}/catalogs/{id}/{clave}`;
 export const CATALOG_CONCEPTS_KEY = 'catalog-concepts';
+
+export const ESTIMACION_LIST_KEY = 'estimaciones-list';
+export const ESTIMACIONES_URL = `${BASE_URL}/estimaciones/`;
+export const ESTIMACION_URL = `${BASE_URL}/estimaciones/{id}`;

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { FC } from 'react';
 import {
+  MdOutlineCreate,
   MdOutlineLibraryAdd,
   MdOutlinePreview,
   MdOutlineFormatListBulleted,
@@ -11,31 +12,38 @@ import styles from '@/styles/pages/template.module.scss';
 
 const ENLACES: ActionCardProps[] = [
   {
-    title: 'Visualizar Estimaciones',
+    title: 'Captura de reportes',
     Icon: MdOutlineFormatListBulleted,
-    path: '/estimaciones/visualizar',
-    actionName: 'Visitar',
+    path: '/reportes/agregar',
+    actionName: 'Capturar',
     col: 1,
+  },
+  {
+    title: 'Todos los reportes',
+    Icon: MdOutlinePreview,
+    path: '/reportes/lista',
+    actionName: 'Visitar',
+    col: 2,
   },
 ];
 
-const Estimaciones: FC = () => {
+const Reportes: FC = () => {
   return (
     <>
       <Head>
-        <title>Cityworks - Estimaciones </title>
-        <meta name="description" content="CityWorks, pagina de estimaciones" />
+        <title>Cityworks - Reportes </title>
+        <meta name="description" content="CityWorks, pagina de reportes" />
       </Head>
       <main className={styles.page}>
-        <UserLayout title="Estimaciones">
+        <UserLayout title="Reportes">
           {ENLACES.map((actividad, idx) => (
             <ActionCard key={actividad.title + idx} {...actividad} />
           ))}
-          <Entrega collapsed={false} last={false} />
+          <Entrega collapsed={false} />
         </UserLayout>
       </main>
     </>
   );
 };
 
-export default Estimaciones;
+export default Reportes;

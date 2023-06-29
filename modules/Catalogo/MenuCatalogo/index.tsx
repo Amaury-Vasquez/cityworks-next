@@ -1,6 +1,11 @@
 import clsx from 'clsx';
 import { FC } from 'react';
-import { MdAdd, MdDeleteOutline, MdOutlineRestartAlt } from 'react-icons/md';
+import {
+  MdAdd,
+  MdDeleteOutline,
+  MdOutlineRestartAlt,
+  MdEditDocument,
+} from 'react-icons/md';
 import { IconButton } from '@/components';
 import { useCatalogHandle, useDialog } from '@/hooks';
 import { Concepto } from '@/interfaces';
@@ -33,6 +38,11 @@ export const MenuCatalogo: FC<MenuCatalogoProps> = ({
         Icon={MdOutlineRestartAlt}
         onClick={refetch}
         tooltip="Recargar catálogo"
+      />
+      <IconButton
+        Icon={MdEditDocument}
+        onClick={refetch}
+        tooltip="Generar estimacion"
       />
       <div className="relative h-fit w-fit">
         <IconButton

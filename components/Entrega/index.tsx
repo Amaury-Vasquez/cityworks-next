@@ -7,10 +7,16 @@ const { actividadesCard, collapsedCard, cardTitle, col3, entrega } = styles;
 
 interface EntregaProps {
   collapsed?: boolean;
+  last?: boolean;
 }
 
-export const Entrega: FC<EntregaProps> = ({ collapsed = true }) => (
-  <Card className={clsx(actividadesCard, collapsed && collapsedCard, col3)}>
+export const Entrega: FC<EntregaProps> = ({
+  collapsed = true,
+  last = true,
+}) => (
+  <Card
+    className={clsx(actividadesCard, collapsed && collapsedCard, last && col3)}
+  >
     <span className={cardTitle}>Proxima Entrega</span>
     <span className={entrega}> Junio 25</span>
     <span />

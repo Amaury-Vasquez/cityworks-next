@@ -1,27 +1,27 @@
-import Head from "next/head";
-import { FC } from "react";
-import { Carousel } from "@/components";
-import { ImageType } from "@/interfaces";
-import styles from "@/styles/pages/about.module.scss";
+import Head from 'next/head';
+import { FC } from 'react';
+import { Carousel } from '@/components';
+import { ImageType } from '@/interfaces';
+import styles from '@/styles/pages/about.module.scss';
 
 const { aboutContent, aboutInfo } = styles;
 
 const carouselImages: ImageType[] = [
   {
-    src: "https://i.imgur.com/vsGQ4m6.jpg",
-    alt: "Parque Cdmx en familia",
+    src: 'https://i.imgur.com/vsGQ4m6.jpg',
+    alt: 'Parque Cdmx en familia',
   },
   {
-    src: "https://imgur.com/TlBHXyP.jpg",
-    alt: "Parque los venados, Cdmx",
+    src: 'https://imgur.com/TlBHXyP.jpg',
+    alt: 'Parque los venados, Cdmx',
   },
   {
-    src: "https://i.imgur.com/dqGDpjj.jpg?1",
-    alt: "Bosque de Chapultepec, Cdmx",
+    src: 'https://i.imgur.com/dqGDpjj.jpg?1',
+    alt: 'Bosque de Chapultepec, Cdmx',
   },
   {
-    src: "https://i.imgur.com/mmkI1QF.png",
-    alt: "Parque la Mexicana, Cdmx",
+    src: 'https://i.imgur.com/mmkI1QF.png',
+    alt: 'Parque la Mexicana, Cdmx',
   },
 ];
 

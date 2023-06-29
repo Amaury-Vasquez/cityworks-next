@@ -13,11 +13,6 @@ const LINKS: NavigationLinkProps[] = [
     text: 'Actividades',
   },
   {
-    path: '/documentos',
-    Icon: MdEditDocument,
-    text: 'Documentos',
-  },
-  {
     path: '/estimaciones',
     Icon: FaCalculator,
     text: 'Estimaciones',

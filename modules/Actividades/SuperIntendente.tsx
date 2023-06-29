@@ -14,11 +14,11 @@ const ACTIVIDADES_SUPER_INTENDENTE: ActionCardProps[] = [
     col: 1,
   },
   {
-    title: 'Captura de estimaciones',
+    title: 'Estimaciones',
     Icon: FaCalculator,
     collapsed: false,
     path: '/estimaciones',
-    actionName: 'Capturar',
+    actionName: 'Visitar',
     col: 1,
   },
   {
